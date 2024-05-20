@@ -4,16 +4,14 @@ import NoContent from './TableNoContent.vue'
 </script>
 
 <script lang="ts">
-import { ref } from 'vue'
-
-const itemList = ref<any[]>([
-  {
-    chave: '01234567890123456789012345678901234567890123',
-    data_emissao: '18/05/2024',
-    data_recebimento: '18/05/2024',
-    cnpj: '10490181000135'
+export default {
+  props: {
+    itemList: {
+      type: Array<NotaFiscal>,
+      required: true
+    }
   }
-])
+}
 </script>
 
 <template>

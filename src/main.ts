@@ -2,5 +2,16 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import PrimeVue from 'primevue/config'
+import Madeira from './presets/madeira'
+import ToastService from 'primevue/toastservice'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(PrimeVue, {
+  unstyled: true,
+  pt: Madeira
+})
+
+app.use(ToastService)
+
+app.mount('#app')
