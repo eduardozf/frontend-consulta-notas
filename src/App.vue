@@ -22,6 +22,8 @@ const showToast = (type: 'info' | 'error', message: string) => {
 const handleSearch = async (key: string) => {
   try {
     const response = await api.get(`/nota-fiscal/${key}`)
+    if (!response.data.length) throw Error('Empty response')
+
     tableData.value.push(...response.data)
     showToast('info', 'Nota Fiscal Encontrada.')
     clearSearch()
